@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const Documentary_1 = require("./Documentary");
+const Film_1 = require("./Film");
+const MovieLibrary_1 = require("./MovieLibrary");
+const movieLibrary = new MovieLibrary_1.MovieLibrary();
+const film1 = new Film_1.Film(1, "Le Cinquième Élément", 120, "Science-Fiction", "1997", "Luc Besson");
+const documentary1 = new Documentary_1.Documentary(1, "La Vie Secrète des Pharaons", 90, "Histoire", "2014", "L'Égypte Ancienne");
+movieLibrary.add(documentary1);
+movieLibrary.add(film1);
+console.log(movieLibrary);
+documentary1.play();
+console.log(film1);
