@@ -13,11 +13,11 @@ export class Serie extends Video {
     super(id, title, duration, genre, realiseDate);
   }
   play(): void {
-    console.log(`Lecture du film ${this.title} réalisé par : ${this.director}`);
+    console.log(`Lecture de la serie ${this.title} réalisé par ${this.director}.`);
   }
 }
 
-class Episode {
+export class Episode {
   constructor(
     public title: string,
     public number: number,
@@ -28,7 +28,7 @@ class Episode {
   }
 }
 
-class Season {
+export class Season {
   constructor(
     public number: number,
     public episodes: Episode[]
