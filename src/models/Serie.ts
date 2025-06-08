@@ -13,7 +13,9 @@ export class Serie extends Video {
     super(id, title, duration, genre, realiseDate);
   }
   play(): void {
-    console.log(`Lecture de la serie ${this.title} réalisé par ${this.director}.`);
+    console.log(
+      `Lecture de la serie ${this.title} réalisé par ${this.director}.`
+    );
   }
 }
 

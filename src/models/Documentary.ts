@@ -1,4 +1,4 @@
-import { Video } from "./Video";
+import { Video } from "./Video"
 
 export  class Documentary extends Video {
   constructor(
