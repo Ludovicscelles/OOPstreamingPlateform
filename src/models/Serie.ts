@@ -19,6 +19,13 @@ export class Serie extends Video {
   }
 }
 
+export class Season {
+  constructor(
+    public number: number,
+    public episodes: Episode[]
+  ) {}
+}
+
 export class Episode {
   constructor(
     public title: string,
@@ -28,11 +35,4 @@ export class Episode {
   play() {
     console.log(`Lecture de l'épisode ${this.number} : ${this.title}`);
   }
-}
-
-export class Season {
-  constructor(
-    public number: number,
-    public episodes: Episode[]
-  ) {}
 }

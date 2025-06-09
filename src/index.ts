@@ -47,17 +47,17 @@ const serie1 = createSerie(1, "Columbo", "Policier", "1990", "Dary Duke", [
     episodes: [
       {
         title: "Meurte, un autoportrait",
-        number: 1,
+        numberEpisode: 1,
         duration: 90,
       },
       {
         title: "Columbo crie au Loup",
-        number: 2,
+        numberEpisode: 2,
         duration: 90,
       },
       {
         title: "Votez pour moi",
-        number: 3,
+        numberEpisode: 3,
         duration: 90,
       },
     ],
