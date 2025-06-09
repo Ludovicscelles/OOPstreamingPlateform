@@ -62,6 +62,26 @@ const serie1 = createSerie(1, "Columbo", "Policier", "1990", "Dary Duke", [
       },
     ],
   },
+  {
+    seasonNumber: 10,
+    episodes: [
+      {
+        title: "Columbo à l'université",
+        numberEpisode: 1,
+        duration: 90,
+      },
+      {
+        title: "Le meurtre peut nuire à la santé",
+        numberEpisode: 2,
+        duration: 86,
+      },
+      {
+        title: "Jeux d'ombres",
+        numberEpisode: 3,
+        duration: 92,
+      },
+    ],
+  },
 ]);
 
 movieLibrary.add(documentary1);
@@ -73,7 +93,8 @@ console.log(movieLibrary);
 documentary1.play();
 console.log(film1);
 console.log(serie1);
+console.log(serie1.season[0] && serie1.season[1]);
 serie1.play();
-serie1.season[0].episodes[2].play()
+serie1.season[0].episodes[2].play();
 
 console.log(movieLibrary);

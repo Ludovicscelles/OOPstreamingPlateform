@@ -21,30 +21,51 @@ const serie1 = (0, createSerie_1.createSerie)(1, "Columbo", "Policier", "1990", 
         episodes: [
             {
                 title: "Meurte, un autoportrait",
-                number: 1,
+                numberEpisode: 1,
                 duration: 90,
             },
             {
                 title: "Columbo crie au Loup",
-                number: 2,
+                numberEpisode: 2,
                 duration: 90,
             },
             {
                 title: "Votez pour moi",
-                number: 3,
+                numberEpisode: 3,
                 duration: 90,
             },
         ],
     },
+    {
+        seasonNumber: 10,
+        episodes: [
+            {
+                title: "Columbo à l'université",
+                numberEpisode: 1,
+                duration: 90,
+            },
+            {
+                title: "Le meurtre peut nuire à la santé",
+                numberEpisode: 2,
+                duration: 86,
+            },
+            {
+                title: "Jeux d'ombres",
+                numberEpisode: 3,
+                duration: 92,
+            },
+        ],
+    },
 ]);
-movieLibrary.add(documentary1);
-movieLibrary.add(documentary2);
-movieLibrary.add(film1);
-movieLibrary.add(serie1);
-console.log(movieLibrary);
-documentary1.play();
-console.log(film1);
-console.log(serie1);
-serie1.play();
-serie1.season[0].episodes[2].play();
-console.log(movieLibrary);
+// movieLibrary.add(documentary1);
+// movieLibrary.add(documentary2);
+// movieLibrary.add(film1);
+// movieLibrary.add(serie1);
+// console.log(movieLibrary);
+// documentary1.play();
+// console.log(film1);
+// console.log(serie1);
+console.log(serie1.season[0] && serie1.season[1]);
+// serie1.play();
+// serie1.season[0].episodes[2].play();
+// console.log(movieLibrary);
