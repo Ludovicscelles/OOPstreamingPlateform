@@ -1,17 +1,17 @@
-import { Video } from "./Video"
+import { Video } from "./Video";
 
-export  class Documentary extends Video {
+export class Documentary extends Video {
   constructor(
     id: number,
     title: string,
-    duration: number,
     genre: string,
+    duration: number,
     realiseDate: string,
     public subject: string
   ) {
-    super(id, title, duration, genre, realiseDate);
+    super(id, title, genre, duration, realiseDate);
   }
-   play(): void {
+  play(): void {
     console.log(
       `Lecture du documentaire ${this.title} sur le sujet : ${this.subject}`
     );

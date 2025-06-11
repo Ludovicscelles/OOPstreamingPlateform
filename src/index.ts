@@ -7,17 +7,17 @@ const movieLibrary = new MovieLibrary();
 
 const film1 = new Film(
   1,
-  "Le Cinquième Élément",
-  120,
+  "Le Cinq",
   "Science-Fiction",
+  120,
   "1997",
   "Luc Besson"
 );
 const documentary1 = new Documentary(
   1,
   "La Vie Secrète des Pharaons",
-  90,
   "Histoire",
+  90,
   "2014",
   "L'Égypte Ancienne"
 );
@@ -25,8 +25,8 @@ const documentary1 = new Documentary(
 const documentary2 = new Documentary(
   2,
   "Cléopatre",
-  88,
   "Histoire",
+  88,
   "2016",
   "L'Égype Ancienne"
 );
@@ -41,44 +41,52 @@ const documentary2 = new Documentary(
 //   season9,
 // ]);
 
-const serie1 = createSerie(1, "Columbo", "Policier", "1990", "Dary Duke", [
+const serie1 = createSerie(1, "Columbo", "Policier", [
   {
+    seasonYear: 1989,
     seasonNumber: 9,
     episodes: [
       {
         title: "Meurte, un autoportrait",
         numberEpisode: 1,
         duration: 90,
+        director: "James Frawley",
       },
       {
         title: "Columbo crie au Loup",
         numberEpisode: 2,
         duration: 90,
+        director: "William Read Woodfield",
       },
       {
         title: "Votez pour moi",
         numberEpisode: 3,
         duration: 90,
+        director: "Patrick McGoohan",
       },
     ],
   },
   {
+    seasonYear: 1990,
     seasonNumber: 10,
     episodes: [
       {
-        title: "Columbo à l'université",
+        title: "Criminologie appliquée",
         numberEpisode: 1,
         duration: 90,
+        director: "E.W. Swackhamer",
       },
       {
         title: "Le meurtre peut nuire à la santé",
         numberEpisode: 2,
         duration: 86,
+        director: "Daryl Duke",
       },
       {
         title: "Jeux d'ombres",
         numberEpisode: 3,
         duration: 92,
+        director: "Alan J Levi",
       },
     ],
   },

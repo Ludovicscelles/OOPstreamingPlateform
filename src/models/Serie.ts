@@ -7,20 +7,20 @@ export class Serie extends Video {
     duration: number,
     genre: string,
     realiseDate: string,
-    public director: string,
     public season: Season[]
   ) {
-    super(id, title, duration, genre, realiseDate);
+    super(id, title, genre, duration, realiseDate);
   }
   play(): void {
     console.log(
-      `Lecture de la serie ${this.title} réalisé par ${this.director}.`
+      `Lecture de la serie ${this.title}.`
     );
   }
 }
 
 export class Season {
   constructor(
+    public year: number,
     public number: number,
     public episodes: Episode[]
   ) {}
@@ -30,7 +30,8 @@ export class Episode {
   constructor(
     public title: string,
     public number: number,
-    public duration: number
+    public duration: number,
+    public director: string,
   ) {}
   play() {
     console.log(`Lecture de l'épisode ${this.number} : ${this.title}`);

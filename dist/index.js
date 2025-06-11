@@ -15,57 +15,65 @@ const documentary2 = new Documentary_1.Documentary(2, "Cléopatre", 88, "Histoir
 // const serie1 = new Serie(1, "Columbo", 90, "Policier", "1990", "Dary Duke", [
 //   season9,
 // ]);
-const serie1 = (0, createSerie_1.createSerie)(1, "Columbo", "Policier", "1990", "Dary Duke", [
+const serie1 = (0, createSerie_1.createSerie)(1, "Columbo", "Policier", [
     {
+        seasonYear: 1989,
         seasonNumber: 9,
         episodes: [
             {
                 title: "Meurte, un autoportrait",
                 numberEpisode: 1,
                 duration: 90,
+                director: "James Frawley",
             },
             {
                 title: "Columbo crie au Loup",
                 numberEpisode: 2,
                 duration: 90,
+                director: "William Read Woodfield",
             },
             {
                 title: "Votez pour moi",
                 numberEpisode: 3,
                 duration: 90,
+                director: "Patrick McGoohan",
             },
         ],
     },
     {
+        seasonYear: 1990,
         seasonNumber: 10,
         episodes: [
             {
-                title: "Columbo à l'université",
+                title: "Criminologie appliquée",
                 numberEpisode: 1,
                 duration: 90,
+                director: "E.W. Swackhamer"
             },
             {
                 title: "Le meurtre peut nuire à la santé",
                 numberEpisode: 2,
                 duration: 86,
+                director: "Daryl Duke"
             },
             {
                 title: "Jeux d'ombres",
                 numberEpisode: 3,
                 duration: 92,
+                director: "Alan J Levi"
             },
         ],
     },
 ]);
-// movieLibrary.add(documentary1);
-// movieLibrary.add(documentary2);
-// movieLibrary.add(film1);
-// movieLibrary.add(serie1);
-// console.log(movieLibrary);
-// documentary1.play();
-// console.log(film1);
-// console.log(serie1);
+movieLibrary.add(documentary1);
+movieLibrary.add(documentary2);
+movieLibrary.add(film1);
+movieLibrary.add(serie1);
+console.log(movieLibrary);
+documentary1.play();
+console.log(film1);
+console.log(serie1);
 console.log(serie1.season[0] && serie1.season[1]);
-// serie1.play();
-// serie1.season[0].episodes[2].play();
-// console.log(movieLibrary);
+serie1.play();
+serie1.season[0].episodes[2].play();
+console.log(movieLibrary);
