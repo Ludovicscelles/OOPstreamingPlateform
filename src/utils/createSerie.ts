@@ -5,7 +5,6 @@ import { Episode, Season, Serie } from "../models/Serie";
 
 // Déclaration de la fonction createSerie et la rend exportable pour l'utiliser ailleurs dans le projet.
 export function createSerie(
-
   // Paramètres de la fonction pour créer une série.
   // Chaque paramètre correspond à une propriété de la série.
   id: number,
@@ -28,10 +27,8 @@ export function createSerie(
 
   // La fonction retourne une instance de la classe Serie, construite à partir des paramètres fournis.
 ): Serie {
-
   // Boucle sur chaque élément de seasonData. Pour chaque saison, on extrait le numéro de la saison et les épisodes.
   const season = seasonData.map(({ seasonYear, seasonNumber, episodes }) => {
-    
     // Pour chaque épisode, on crée une instance de la classe Episode avec le titre, le numéro d'épisode et la durée.
     const episodesInstances = episodes.map(
       (ep) => new Episode(ep.title, ep.numberEpisode, ep.duration, ep.director)

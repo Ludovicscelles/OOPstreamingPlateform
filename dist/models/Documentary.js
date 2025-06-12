@@ -3,8 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Documentary = void 0;
 const Video_1 = require("./Video");
 class Documentary extends Video_1.Video {
-    constructor(id, title, duration, genre, realiseDate, subject) {
-        super(id, title, duration, genre, realiseDate);
+    constructor(id, title, genre, duration, realiseDate, subject) {
+        super(id, title, genre, duration, realiseDate);
         this.subject = subject;
     }
     play() {

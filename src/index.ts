@@ -1,6 +1,10 @@
-import { Documentary } from "./models/Documentary";
+import { documentariesData } from "./data/documentariesData";
+
 import { Film } from "./models/Film";
+
+import { createDocumentary } from "./utils/createDocumentary";
 import { createSerie } from "./utils/createSerie";
+
 import { MovieLibrary } from "./MovieLibrary";
 
 const movieLibrary = new MovieLibrary();
@@ -13,33 +17,21 @@ const film1 = new Film(
   "1997",
   "Luc Besson"
 );
-const documentary1 = new Documentary(
-  1,
-  "La Vie Secrète des Pharaons",
-  "Histoire",
-  90,
-  "2014",
-  "L'Égypte Ancienne"
+
+// Création d'un tableau d'identifiants de documentaires sélectionnés
+const selectedIds = [1, 2, 3, 4, 5];
+
+// Filtrage des documentaires en fonction des identifiants sélectionnés
+// puis création d'instances de Documentary pour chaque documentaire sélectionné
+const selectedDocumentaries = documentariesData.filter((documentary) =>
+  selectedIds.includes(documentary.id)
 );
 
-const documentary2 = new Documentary(
-  2,
-  "Cléopatre",
-  "Histoire",
-  88,
-  "2016",
-  "L'Égype Ancienne"
-);
-
-// const episode1 = new Episode("Meurtre, un autoportrait", 1, 90);
-// const episode2 = new Episode("Columbo crie au Loup", 2, 90);
-// const episode3 = new Episode("Votez pour moi", 3, 90);
-
-// const season9 = new Season(9, [episode1, episode2, episode3]);
-
-// const serie1 = new Serie(1, "Columbo", 90, "Policier", "1990", "Dary Duke", [
-//   season9,
-// ]);
+// Ajout des documentaires sélectionnés à la vidéothèque
+selectedDocumentaries.forEach((selectedData) => {
+  const documentary = createDocumentary(selectedData);
+  movieLibrary.add(documentary);
+});
 
 const serie1 = createSerie(1, "Columbo", "Policier", [
   {
@@ -92,13 +84,11 @@ const serie1 = createSerie(1, "Columbo", "Policier", [
   },
 ]);
 
-movieLibrary.add(documentary1);
-movieLibrary.add(documentary2);
 movieLibrary.add(film1);
 movieLibrary.add(serie1);
 
 console.log(movieLibrary);
-documentary1.play();
+
 console.log(film1);
 console.log(serie1);
 console.log(serie1.season[0] && serie1.season[1]);
