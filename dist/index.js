@@ -1,21 +1,27 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const documentariesData_1 = require("./data/documentariesData");
-const Film_1 = require("./models/Film");
+const filmsData_1 = require("./data/filmsData");
 const createDocumentary_1 = require("./utils/createDocumentary");
+const createFilm_1 = require("./utils/createFilm");
 const createSerie_1 = require("./utils/createSerie");
 const MovieLibrary_1 = require("./MovieLibrary");
 const movieLibrary = new MovieLibrary_1.MovieLibrary();
-const film1 = new Film_1.Film(1, "Le Cinq", "Science-Fiction", 120, "1997", "Luc Besson");
-const selectedIds = [1, 2, 3, 4, 5];
-const selectedDocumentaries = documentariesData_1.documentariesData.filter((documentary) => selectedIds.includes(documentary.id));
-selectedDocumentaries.forEach((selectedData) => {
-    const documentaries = (0, createDocumentary_1.createDocumentary)(selectedData);
-    movieLibrary.add(documentaries);
+const selectedIdsFilms = [5, 9, 11, 14, 20];
+const selectedFilms = filmsData_1.filmsData.filter((film) => selectedIdsFilms.includes(film.id));
+selectedFilms.forEach((selectedFilm) => {
+    const film = (0, createFilm_1.createFilm)(selectedFilm);
+    movieLibrary.add(film);
 });
-documentariesData_1.documentariesData.forEach((docData) => {
-    const doc = (0, createDocumentary_1.createDocumentary)(docData);
-    movieLibrary.add(doc);
+// Création d'un tableau d'identifiants de documentaires sélectionnés
+const selectedIds = [1, 2, 3, 4, 5];
+// Filtrage des documentaires en fonction des identifiants sélectionnés
+// puis création d'instances de Documentary pour chaque documentaire sélectionné
+const selectedDocumentaries = documentariesData_1.documentariesData.filter((documentary) => selectedIds.includes(documentary.id));
+// Ajout des documentaires sélectionnés à la vidéothèque
+selectedDocumentaries.forEach((selectedData) => {
+    const documentary = (0, createDocumentary_1.createDocumentary)(selectedData);
+    movieLibrary.add(documentary);
 });
 const serie1 = (0, createSerie_1.createSerie)(1, "Columbo", "Policier", [
     {
@@ -67,10 +73,8 @@ const serie1 = (0, createSerie_1.createSerie)(1, "Columbo", "Policier", [
         ],
     },
 ]);
-movieLibrary.add(film1);
 movieLibrary.add(serie1);
 console.log(movieLibrary);
-console.log(film1);
 console.log(serie1);
 console.log(serie1.season[0] && serie1.season[1]);
 serie1.play();
