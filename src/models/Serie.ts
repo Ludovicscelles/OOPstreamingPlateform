@@ -4,12 +4,10 @@ export class Serie extends Video {
   constructor(
     id: number,
     title: string,
-    duration: number,
     genre: string,
-    realiseDate: string,
     public season: Season[]
   ) {
-    super(id, title, genre, duration, realiseDate);
+    super(id, title, genre);
   }
   play(): void {
     console.log(

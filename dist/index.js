@@ -2,16 +2,28 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const documentariesData_1 = require("./data/documentariesData");
 const filmsData_1 = require("./data/filmsData");
+const seriesData_1 = require("./data/seriesData");
 const createDocumentary_1 = require("./utils/createDocumentary");
 const createFilm_1 = require("./utils/createFilm");
 const createSerie_1 = require("./utils/createSerie");
 const MovieLibrary_1 = require("./MovieLibrary");
+const Serie_1 = require("./models/Serie");
+const Film_1 = require("./models/Film");
+const Documentary_1 = require("./models/Documentary");
 const movieLibrary = new MovieLibrary_1.MovieLibrary();
+// Création d'un tableau d'identifiants de films sélectionnés
 const selectedIdsFilms = [5, 9, 11, 14, 20];
+// Filtrage des films en fonction des identifiants sélectionnés
 const selectedFilms = filmsData_1.filmsData.filter((film) => selectedIdsFilms.includes(film.id));
+// Boucle sur les films sélectionnés et création d'instances de Film
+// puis ajout à la vidéothèque
 selectedFilms.forEach((selectedFilm) => {
     const film = (0, createFilm_1.createFilm)(selectedFilm);
     movieLibrary.add(film);
+});
+seriesData_1.seriesData.forEach((serieData) => {
+    const serie = (0, createSerie_1.createSerie)(serieData);
+    movieLibrary.add(serie);
 });
 // Création d'un tableau d'identifiants de documentaires sélectionnés
 const selectedIds = [1, 2, 3, 4, 5];
@@ -23,60 +35,21 @@ selectedDocumentaries.forEach((selectedData) => {
     const documentary = (0, createDocumentary_1.createDocumentary)(selectedData);
     movieLibrary.add(documentary);
 });
-const serie1 = (0, createSerie_1.createSerie)(1, "Columbo", "Policier", [
-    {
-        seasonYear: 1989,
-        seasonNumber: 9,
-        episodes: [
-            {
-                title: "Meurte, un autoportrait",
-                numberEpisode: 1,
-                duration: 90,
-                director: "James Frawley",
-            },
-            {
-                title: "Columbo crie au Loup",
-                numberEpisode: 2,
-                duration: 90,
-                director: "William Read Woodfield",
-            },
-            {
-                title: "Votez pour moi",
-                numberEpisode: 3,
-                duration: 90,
-                director: "Patrick McGoohan",
-            },
-        ],
-    },
-    {
-        seasonYear: 1990,
-        seasonNumber: 10,
-        episodes: [
-            {
-                title: "Criminologie appliquée",
-                numberEpisode: 1,
-                duration: 90,
-                director: "E.W. Swackhamer",
-            },
-            {
-                title: "Le meurtre peut nuire à la santé",
-                numberEpisode: 2,
-                duration: 86,
-                director: "Daryl Duke",
-            },
-            {
-                title: "Jeux d'ombres",
-                numberEpisode: 3,
-                duration: 92,
-                director: "Alan J Levi",
-            },
-        ],
-    },
-]);
-movieLibrary.add(serie1);
-console.log(movieLibrary);
-console.log(serie1);
-console.log(serie1.season[0] && serie1.season[1]);
-serie1.play();
-serie1.season[0].episodes[2].play();
-console.log(movieLibrary);
+console.log(MovieLibrary_1.MovieLibrary);
+console.log(movieLibrary.getAll().filter((video) => video instanceof Serie_1.Serie));
+console.log(movieLibrary
+    .getAll()
+    .filter((video) => video instanceof Serie_1.Serie)
+    .forEach((serie) => {
+    console.log(`Vous regardez la série ${serie.title}`);
+}));
+console.log(movieLibrary.getAll().filter((video) => video instanceof Film_1.Film));
+console.log(movieLibrary
+    .getAll()
+    .filter((video) => video instanceof Film_1.Film)
+    .forEach((film) => film.play()));
+console.log(movieLibrary.getAll().filter((video) => video instanceof Documentary_1.Documentary));
+console.log(movieLibrary
+    .getAll()
+    .filter((video) => video instanceof Documentary_1.Documentary)
+    .forEach((documentary) => documentary.play()));

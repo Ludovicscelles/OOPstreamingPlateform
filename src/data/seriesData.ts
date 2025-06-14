@@ -3,7 +3,7 @@ export const seriesData = [
     id: 1,
     title: "Columbo",
     genre: "Policier",
-    Seasons: [
+    seasonData: [
       {
         seasonYear: 1989,
         seasonNumber: 9,
@@ -58,7 +58,7 @@ export const seriesData = [
     id: 2,
     title: "Rome",
     genre: "Historique",
-    Seasons: [
+    seasonData: [
       {
         seasonYear: 2005,
         seasonNumber: 1,

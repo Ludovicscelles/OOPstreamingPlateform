@@ -1,11 +1,15 @@
 import { documentariesData } from "./data/documentariesData";
 import { filmsData } from "./data/filmsData";
+import { seriesData } from "./data/seriesData";
 
 import { createDocumentary } from "./utils/createDocumentary";
 import { createFilm } from "./utils/createFilm";
 import { createSerie } from "./utils/createSerie";
 
 import { MovieLibrary } from "./MovieLibrary";
+import { Serie } from "./models/Serie";
+import { Film } from "./models/Film";
+import { Documentary } from "./models/Documentary";
 
 const movieLibrary = new MovieLibrary();
 
@@ -24,6 +28,11 @@ selectedFilms.forEach((selectedFilm) => {
   movieLibrary.add(film);
 });
 
+seriesData.forEach((serieData) => {
+  const serie = createSerie(serieData);
+  movieLibrary.add(serie);
+});
+
 // Création d'un tableau d'identifiants de documentaires sélectionnés
 const selectedIds = [1, 2, 3, 4, 5];
 
@@ -39,64 +48,35 @@ selectedDocumentaries.forEach((selectedData) => {
   movieLibrary.add(documentary);
 });
 
-const serie1 = createSerie(1, "Columbo", "Policier", [
-  {
-    seasonYear: 1989,
-    seasonNumber: 9,
-    episodes: [
-      {
-        title: "Meurte, un autoportrait",
-        numberEpisode: 1,
-        duration: 90,
-        director: "James Frawley",
-      },
-      {
-        title: "Columbo crie au Loup",
-        numberEpisode: 2,
-        duration: 90,
-        director: "William Read Woodfield",
-      },
-      {
-        title: "Votez pour moi",
-        numberEpisode: 3,
-        duration: 90,
-        director: "Patrick McGoohan",
-      },
-    ],
-  },
-  {
-    seasonYear: 1990,
-    seasonNumber: 10,
-    episodes: [
-      {
-        title: "Criminologie appliquée",
-        numberEpisode: 1,
-        duration: 90,
-        director: "E.W. Swackhamer",
-      },
-      {
-        title: "Le meurtre peut nuire à la santé",
-        numberEpisode: 2,
-        duration: 86,
-        director: "Daryl Duke",
-      },
-      {
-        title: "Jeux d'ombres",
-        numberEpisode: 3,
-        duration: 92,
-        director: "Alan J Levi",
-      },
-    ],
-  },
-]);
+console.log(MovieLibrary);
 
-movieLibrary.add(serie1);
+console.log(movieLibrary.getAll().filter((video) => video instanceof Serie));
 
-console.log(movieLibrary);
+console.log(
+  movieLibrary
+    .getAll()
+    .filter((video) => video instanceof Serie)
+    .forEach((serie) => {
+      console.log(`Vous regardez la série ${serie.title}`);
+    })
+);
 
-console.log(serie1);
-console.log(serie1.season[0] && serie1.season[1]);
-serie1.play();
-serie1.season[0].episodes[2].play();
+console.log(movieLibrary.getAll().filter((video) => video instanceof Film));
 
-console.log(movieLibrary);
+console.log(
+  movieLibrary
+    .getAll()
+    .filter((video) => video instanceof Film)
+    .forEach((film) => film.play())
+);
+
+console.log(
+  movieLibrary.getAll().filter((video) => video instanceof Documentary)
+);
+
+console.log(
+  movieLibrary
+    .getAll()
+    .filter((video) => video instanceof Documentary)
+    .forEach((documentary) => documentary.play())
+);

@@ -5,6 +5,9 @@ class MovieLibrary {
     constructor() {
         this.videos = [];
     }
+    getAll() {
+        return this.videos;
+    }
     add(video) {
         this.videos.push(video);
     }
