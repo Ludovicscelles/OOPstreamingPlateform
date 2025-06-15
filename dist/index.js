@@ -21,6 +21,8 @@ selectedFilms.forEach((selectedFilm) => {
     const film = (0, createFilm_1.createFilm)(selectedFilm);
     movieLibrary.add(film);
 });
+const deleateFilmId5 = movieLibrary.delete(5);
+console.log(deleateFilmId5 ? `Film avec l'ID 5 supprimé` : `Vidéo non trouvée.`);
 seriesData_1.seriesData.forEach((serieData) => {
     const serie = (0, createSerie_1.createSerie)(serieData);
     movieLibrary.add(serie);
@@ -35,6 +37,10 @@ selectedDocumentaries.forEach((selectedData) => {
     const documentary = (0, createDocumentary_1.createDocumentary)(selectedData);
     movieLibrary.add(documentary);
 });
+const deleateDocumentaryId1 = movieLibrary.delete(1);
+console.log(deleateDocumentaryId1
+    ? `Documentaire avec l'ID 1 supprimé`
+    : `Vidéo non trouvée.`);
 console.log(MovieLibrary_1.MovieLibrary);
 console.log(movieLibrary.getAll().filter((video) => video instanceof Serie_1.Serie));
 console.log(movieLibrary
@@ -53,3 +59,4 @@ console.log(movieLibrary
     .getAll()
     .filter((video) => video instanceof Documentary_1.Documentary)
     .forEach((documentary) => documentary.play()));
+console.log(movieLibrary);

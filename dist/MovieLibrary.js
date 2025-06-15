@@ -11,5 +11,10 @@ class MovieLibrary {
     add(video) {
         this.videos.push(video);
     }
+    delete(videoId) {
+        const initialLength = this.videos.length;
+        this.videos = this.videos.filter((video) => video.id !== videoId);
+        return this.videos.length < initialLength;
+    }
 }
 exports.MovieLibrary = MovieLibrary;
