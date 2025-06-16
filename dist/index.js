@@ -23,6 +23,14 @@ selectedFilms.forEach((selectedFilm) => {
 });
 const deleateFilmId5 = movieLibrary.delete(5);
 console.log(deleateFilmId5 ? `Film avec l'ID 5 supprimé` : `Vidéo non trouvée.`);
+const searchFilm = movieLibrary.search("Tit");
+searchFilm.length > 0
+    ? console.log(`Résultat de la recherche :\n${searchFilm.map((film) => `${film.title}`).join("\n")}`)
+    : console.log(`Film non trouvé`);
+const searchFilm2 = movieLibrary.search("zazoux");
+searchFilm2.length > 0
+    ? console.log(`Résultat de la recherche: \n${searchFilm2.map((film) => `${film.title}`).join("\n")}`)
+    : console.log(`Film non trouvé`);
 seriesData_1.seriesData.forEach((serieData) => {
     const serie = (0, createSerie_1.createSerie)(serieData);
     movieLibrary.add(serie);
@@ -41,6 +49,14 @@ const deleateDocumentaryId1 = movieLibrary.delete(1);
 console.log(deleateDocumentaryId1
     ? `Documentaire avec l'ID 1 supprimé`
     : `Vidéo non trouvée.`);
+const searchDocumentary = movieLibrary.search("cléo");
+searchDocumentary.length > 0
+    ? console.log(`Documentaire(s) trouvé(s) : ${searchDocumentary.map((doc) => `${doc.title}`)}`)
+    : console.log(`Aucun documentaire trouvé`);
+const searchDocumentary2 = movieLibrary.search("zozozozo");
+searchDocumentary2.length > 0
+    ? console.log(`Documentaire(s) trouvé(s) : ${searchDocumentary2.map((doc) => `${doc.title}`)}`)
+    : console.log(`Aucun documentaire trouvé`);
 console.log(MovieLibrary_1.MovieLibrary);
 console.log(movieLibrary.getAll().filter((video) => video instanceof Serie_1.Serie));
 console.log(movieLibrary

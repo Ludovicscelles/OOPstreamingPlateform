@@ -8,6 +8,9 @@ class MovieLibrary {
     getAll() {
         return this.videos;
     }
+    search(videoTitle) {
+        return this.videos.filter((video) => video.title.toLowerCase().includes(videoTitle.toLowerCase()));
+    }
     add(video) {
         this.videos.push(video);
     }
