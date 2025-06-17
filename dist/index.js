@@ -33,7 +33,7 @@ searchFilm2.length > 0
     : console.log(`Film non trouvé`);
 seriesData_1.seriesData.forEach((serieData) => {
     const serie = (0, createSerie_1.createSerie)(serieData);
-    movieLibrary.add(serie);
+    movieLibrary.addSerie(serie);
 });
 // Création d'un tableau d'identifiants de documentaires sélectionnés
 const selectedIds = [1, 2, 3, 4, 5];
@@ -76,3 +76,7 @@ console.log(movieLibrary
     .filter((video) => video instanceof Documentary_1.Documentary)
     .forEach((documentary) => documentary.play()));
 console.log(movieLibrary);
+const searchEpisodeSerie1 = movieLibrary.searchEpisodeSerie("peut nuire");
+searchEpisodeSerie1.length > 0
+    ? console.log(`Épisode(s) trouvé(s) : ${searchEpisodeSerie1.map((ep) => `${ep.title}`)}`)
+    : console.log(`Aucun épisode trouvé`);

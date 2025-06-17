@@ -49,7 +49,7 @@ searchFilm2.length > 0
 
 seriesData.forEach((serieData) => {
   const serie = createSerie(serieData);
-  movieLibrary.add(serie);
+  movieLibrary.addSerie(serie);
 });
 
 // Création d'un tableau d'identifiants de documentaires sélectionnés
@@ -126,3 +126,10 @@ console.log(
 );
 
 console.log(movieLibrary);
+
+const searchEpisodeSerie1 = movieLibrary.searchEpisodeSerie("peut nuire");
+searchEpisodeSerie1.length > 0
+  ? console.log(
+      `Épisode(s) trouvé(s) : ${searchEpisodeSerie1.map((ep) => `${ep.title}`)}`
+    )
+  : console.log(`Aucun épisode trouvé`);
