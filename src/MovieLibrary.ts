@@ -10,10 +10,18 @@ export class MovieLibrary {
   }
 
   search(videoTitle: string): Video[] {
-    const searchTerm = videoTitle.toLocaleLowerCase();
+    const searchTerm = videoTitle.toLowerCase();
 
     return this.videos.filter((video) =>
       video.title.toLowerCase().includes(searchTerm)
+    );
+  }
+
+  searchSerie(serieTitle: string): Serie[] {
+    const searchTerm = serieTitle.toLowerCase();
+
+    return this.series.filter((serie) =>
+      serie.title.toLowerCase().includes(searchTerm)
     );
   }
 

@@ -43,7 +43,7 @@ searchFilm.length > 0
 const searchFilm2 = movieLibrary.search("zazoux");
 searchFilm2.length > 0
   ? console.log(
-      `Résultat de la recherche: \n${searchFilm2.map((film) => `${film.title}`).join("\n")}`
+      `Résultat de la recherche : \n${searchFilm2.map((film) => `${film.title}`).join("\n")}`
     )
   : console.log(`Film non trouvé`);
 
@@ -52,13 +52,19 @@ seriesData.forEach((serieData) => {
   movieLibrary.addSerie(serie);
 });
 
+const searchSerie = movieLibrary.searchSerie("Ro");
+searchSerie.length > 0
+  ? console.log(
+      `Résultat de la recherche : \n${searchSerie.map((serie) => `${serie.title}`).join("\n")}`
+    )
+  : console.log(`Série non trouvée`);
+
 const searchEpisodeSerie1 = movieLibrary.searchEpisodeSerie("peut nuire");
 searchEpisodeSerie1.length > 0
   ? console.log(
       `Épisode(s) trouvé(s) : ${searchEpisodeSerie1.map((ep) => `${ep.episode.title} (saison ${ep.season.number} de ${ep.serie.title})`)}`
     )
   : console.log(`Aucun épisode trouvé`);
-
 
 // Création d'un tableau d'identifiants de documentaires sélectionnés
 const selectedIds = [1, 2, 3, 4, 5];
@@ -134,4 +140,3 @@ console.log(
 );
 
 console.log(movieLibrary);
-

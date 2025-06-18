@@ -10,8 +10,12 @@ class MovieLibrary {
         return this.videos;
     }
     search(videoTitle) {
-        const searchTerm = videoTitle.toLocaleLowerCase();
+        const searchTerm = videoTitle.toLowerCase();
         return this.videos.filter((video) => video.title.toLowerCase().includes(searchTerm));
+    }
+    searchSerie(serieTitle) {
+        const searchTerm = serieTitle.toLowerCase();
+        return this.series.filter((serie) => serie.title.toLowerCase().includes(searchTerm));
     }
     searchEpisodeSerie(episodeTitle) {
         const searchTerm = episodeTitle.toLocaleLowerCase();
