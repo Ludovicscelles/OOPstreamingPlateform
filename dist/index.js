@@ -78,5 +78,5 @@ console.log(movieLibrary
 console.log(movieLibrary);
 const searchEpisodeSerie1 = movieLibrary.searchEpisodeSerie("peut nuire");
 searchEpisodeSerie1.length > 0
-    ? console.log(`Épisode(s) trouvé(s) : ${searchEpisodeSerie1.map((ep) => `${ep.title}`)}`)
+    ? console.log(`Épisode(s) trouvé(s) : ${searchEpisodeSerie1.map((ep) => `${ep.episode.title} (saison ${ep.season.number} de ${ep.serie.title})`)}`)
     : console.log(`Aucun épisode trouvé`);

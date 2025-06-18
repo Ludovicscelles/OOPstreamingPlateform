@@ -15,17 +15,17 @@ class MovieLibrary {
     }
     searchEpisodeSerie(episodeTitle) {
         const searchTerm = episodeTitle.toLocaleLowerCase();
-        const matchEpisodes = [];
+        const results = [];
         for (const serie of this.series) {
             for (const season of serie.season) {
                 for (const episode of season.episodes) {
                     if (episode.title.toLocaleLowerCase().includes(searchTerm)) {
-                        matchEpisodes.push(episode);
+                        results.push({ episode, season, serie });
                     }
                 }
             }
         }
-        return matchEpisodes;
+        return results;
     }
     add(video) {
         this.videos.push(video);

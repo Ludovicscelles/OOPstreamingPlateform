@@ -1,5 +1,5 @@
 import { Video } from "./models/Video";
-import { Episode, Serie } from "./models/Serie";
+import { Episode, Season, Serie } from "./models/Serie";
 
 export class MovieLibrary {
   private videos: Video[] = [];
@@ -17,21 +17,23 @@ export class MovieLibrary {
     );
   }
 
-  searchEpisodeSerie(episodeTitle: string): Episode[] {
+  searchEpisodeSerie(
+    episodeTitle: string
+  ): { episode: Episode; season: Season; serie: Serie }[] {
     const searchTerm = episodeTitle.toLocaleLowerCase();
 
-    const matchEpisodes: Episode[] = [];
+    const results: { episode: Episode; season: Season; serie: Serie }[] = [];
 
     for (const serie of this.series) {
       for (const season of serie.season) {
         for (const episode of season.episodes) {
           if (episode.title.toLocaleLowerCase().includes(searchTerm)) {
-            matchEpisodes.push(episode);
+            results.push({ episode, season, serie });
           }
         }
       }
     }
-    return matchEpisodes;
+    return results;
   }
 
   add(video: Video) {
