@@ -4,9 +4,14 @@ import { Episode, Season, Serie } from "./models/Serie";
 export class MovieLibrary {
   private videos: Video[] = [];
   private series: Serie[] = [];
+  
 
   getAll(): Video[] {
     return this.videos;
+  }
+
+  getById(id: number): Video | undefined {
+    return this.videos.find((video) => video.id === id);
   }
 
   search(videoTitle: string): Video[] {

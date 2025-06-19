@@ -9,6 +9,9 @@ class MovieLibrary {
     getAll() {
         return this.videos;
     }
+    getById(id) {
+        return this.videos.find((video) => video.id === id);
+    }
     search(videoTitle) {
         const searchTerm = videoTitle.toLowerCase();
         return this.videos.filter((video) => video.title.toLowerCase().includes(searchTerm));
