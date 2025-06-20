@@ -1,6 +1,6 @@
 export const filmsData = [
   {
-    id: 1,
+    id: "F001",
     title: "Le Cinquième Élément",
     genre: "Science-Fiction",
     duration: 120,
@@ -8,7 +8,7 @@ export const filmsData = [
     director: "Luc Besson",
   },
   {
-    id: 2,
+    id: "F002",
     title: "Sueurs Froides",
     genre: "Thriller",
     duration: 128,
@@ -16,7 +16,7 @@ export const filmsData = [
     director: "Alfred Hitchcock",
   },
   {
-    id: 3,
+    id: "F003",
     title: "Inception",
     genre: "Science-Fiction",
     duration: 148,
@@ -24,7 +24,7 @@ export const filmsData = [
     director: "Christopher Nolan",
   },
   {
-    id: 4,
+    id: "F004",
     title: "Le Parrain",
     genre: "Crime",
     duration: 175,
@@ -32,7 +32,7 @@ export const filmsData = [
     director: "Francis Ford Coppola",
   },
   {
-    id: 5,
+    id: "F005",
     title: "Pulp Fiction",
     genre: "Crime",
     duration: 154,
@@ -40,7 +40,7 @@ export const filmsData = [
     director: "Quentin Tarantino",
   },
   {
-    id: 6,
+    id: "F006",
     title: "Forrest Gump",
     genre: "Drama",
     duration: 142,
@@ -48,7 +48,7 @@ export const filmsData = [
     director: "Robert Zemeckis",
   },
   {
-    id: 7,
+    id: "F007",
     title: "Les Diaboliques",
     genre: "Thriller",
     duration: 117,
@@ -56,7 +56,7 @@ export const filmsData = [
     director: "Henri-Georges Clouzot",
   },
   {
-    id: 8,
+    id: "F008",
     title: "Le Fabuleux Destin d'Amélie Poulain",
     genre: "Romance",
     duration: 122,
@@ -64,7 +64,7 @@ export const filmsData = [
     director: "Jean-Pierre Jeunet",
   },
   {
-    id: 9,
+    id: "F009",
     title: "Gladiator",
     genre: "Action",
     duration: 155,
@@ -72,7 +72,7 @@ export const filmsData = [
     director: "Ridley Scott",
   },
   {
-    id: 10,
+    id: "F010",
     title: "Braveheart",
     genre: "Historical Drama",
     duration: 178,
@@ -80,7 +80,7 @@ export const filmsData = [
     director: "Mel Gibson",
   },
   {
-    id: 11,
+    id: "F011",
     title: "Les Oiseaux",
     genre: "Horror",
     duration: 119,
@@ -88,7 +88,7 @@ export const filmsData = [
     director: "Alfred Hitchcock",
   },
   {
-    id: 12,
+    id: "F012",
     title: "Le Dix Commandements",
     genre: "Historical Drama",
     duration: 220,
@@ -96,7 +96,7 @@ export const filmsData = [
     director: "Cecil B. DeMille",
   },
   {
-    id: 13,
+    id: "F013",
     title: "Les Liaisons Dangereuses",
     genre: "Drama",
     duration: 120,
@@ -104,7 +104,7 @@ export const filmsData = [
     director: "Stephen Frears",
   },
   {
-    id: 14,
+    id: "F014",
     title: "Le Silence des Agneaux",
     genre: "Thriller",
     duration: 118,
@@ -112,7 +112,7 @@ export const filmsData = [
     director: "Jonathan Demme",
   },
   {
-    id: 15,
+    id: "F015",
     title: "Ben-Hur",
     genre: "Historical Drama",
     duration: 212,
@@ -120,7 +120,7 @@ export const filmsData = [
     director: "William Wyler",
   },
   {
-    id: 16,
+    id: "F016",
     title: "Les Demoiselles de Rochefort",
     genre: "Musical",
     duration: 125,
@@ -128,7 +128,7 @@ export const filmsData = [
     director: "Jacques Demy",
   },
   {
-    id: 17,
+    id: "F017",
     title: "Le Grand Bleu",
     genre: "Adventure",
     duration: 168,
@@ -136,7 +136,7 @@ export const filmsData = [
     director: "Luc Besson",
   },
   {
-    id: 18,
+    id: "F018",
     title: "La La Land",
     genre: "Musical",
     duration: 128,
@@ -144,7 +144,7 @@ export const filmsData = [
     director: "Damien Chazelle",
   },
   {
-    id: 19,
+    id: "F019",
     title: "Interstellar",
     genre: "Science-Fiction",
     duration: 169,
@@ -152,7 +152,7 @@ export const filmsData = [
     director: "Christopher Nolan",
   },
   {
-    id: 20,
+    id: "F020",
     title: "Titanic",
     genre: "Romance",
     duration: 195,

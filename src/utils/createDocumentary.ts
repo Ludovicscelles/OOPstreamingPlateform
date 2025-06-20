@@ -6,7 +6,7 @@ export function createDocumentary(
 
 // Paramètre data : un objet contenant les propriétés nécessaires pour créer un documentaire
   data: {
-  id: number;
+  id: string;
   title: string;
   genre: string;
   duration: number;

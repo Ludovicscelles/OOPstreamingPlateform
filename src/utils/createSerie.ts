@@ -8,7 +8,7 @@ export function createSerie(
   // Paramètres de la fonction pour créer une série.
   // Chaque paramètre correspond à une propriété de la série.
   data: {
-    id: number;
+    id: string;
     title: string;
     genre: string;
 

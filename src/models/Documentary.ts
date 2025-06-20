@@ -2,7 +2,7 @@ import { Video } from "./Video";
 
 export class Documentary extends Video {
   constructor(
-    id: number,
+    id: string,
     title: string,
     genre: string,
     duration: number,

@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.documentariesData = void 0;
 exports.documentariesData = [
     {
-        id: 1,
+        id: "D001",
         title: "La Vie Secrète des Pharaons",
         genre: "Histoire",
         duration: 90,
@@ -11,7 +11,7 @@ exports.documentariesData = [
         subject: "L'Égypte Ancienne",
     },
     {
-        id: 2,
+        id: "D002",
         title: "Cléopatre",
         genre: "Histoire",
         duration: 88,
@@ -19,7 +19,7 @@ exports.documentariesData = [
         subject: "L'Égypte Ancienne",
     },
     {
-        id: 3,
+        id: "D003",
         title: "Les Mystères de la Rome Antique",
         genre: "Histoire",
         duration: 75,
@@ -27,7 +27,7 @@ exports.documentariesData = [
         subject: "L'Empire Romain",
     },
     {
-        id: 4,
+        id: "D004",
         title: "Les Secrets de la Renaissance",
         genre: "Art",
         duration: 80,
@@ -35,7 +35,7 @@ exports.documentariesData = [
         subject: "L'Art et la Culture de la Renaissance",
     },
     {
-        id: 5,
+        id: "D005",
         title: "Voyage au Coeur de l'Univers",
         genre: "Science",
         duration: 100,
@@ -43,7 +43,7 @@ exports.documentariesData = [
         subject: "L'Astronomie et l'Univers",
     },
     {
-        id: 6,
+        id: "D006",
         title: "Les Civilisations Perdues",
         genre: "Histoire",
         duration: 95,
@@ -51,7 +51,7 @@ exports.documentariesData = [
         subject: "Les Civilisations Oubliées",
     },
     {
-        id: 7,
+        id: "D007",
         title: "Les Grandes Découvertes Scientifiques",
         genre: "Science",
         duration: 85,
@@ -59,7 +59,7 @@ exports.documentariesData = [
         subject: "Les Avancées Scientifiques Majeures",
     },
     {
-        id: 8,
+        id: "D008",
         title: "Les Mystères de l'Égypte Ancienne",
         genre: "Histoire",
         duration: 90,
@@ -67,7 +67,7 @@ exports.documentariesData = [
         subject: "Les Pyramides et les Pharaons",
     },
     {
-        id: 9,
+        id: "D009",
         title: "L'Art de la Guerre à Travers les Âges",
         genre: "Histoire",
         duration: 80,
@@ -75,7 +75,7 @@ exports.documentariesData = [
         subject: "Les Stratégies Militaires dans l'Histoire",
     },
     {
-        id: 10,
+        id: "D010",
         title: "Les Merveilles de la Nature",
         genre: "Nature",
         duration: 70,
@@ -83,7 +83,7 @@ exports.documentariesData = [
         subject: "Les Écosystèmes et la Biodiversité",
     },
     {
-        id: 11,
+        id: "D011",
         title: "Les Secrets de la Médecine Ancienne",
         genre: "Médecine",
         duration: 85,
@@ -91,7 +91,7 @@ exports.documentariesData = [
         subject: "Les Pratiques Médicales dans l'Antiquité",
     },
     {
-        id: 12,
+        id: "D012",
         title: "Les Innovations Technologiques du Passé",
         genre: "Technologie",
         duration: 90,
@@ -99,7 +99,7 @@ exports.documentariesData = [
         subject: "Les Inventions qui ont Changé le Monde",
     },
     {
-        id: 13,
+        id: "D013",
         title: "Les Mystères de la Préhistoire",
         genre: "Histoire",
         duration: 95,
@@ -107,7 +107,7 @@ exports.documentariesData = [
         subject: "Les Premiers Hommes et leur Mode de Vie",
     },
     {
-        id: 14,
+        id: "D014",
         title: "Les Civilisations Mésoaméricaines",
         genre: "Histoire",
         duration: 80,
@@ -115,7 +115,7 @@ exports.documentariesData = [
         subject: "Les Mayas, Aztèques et Incas",
     },
     {
-        id: 15,
+        id: "D015",
         title: "Les Grandes Explorations Maritimes",
         genre: "Histoire",
         duration: 100,
@@ -123,7 +123,7 @@ exports.documentariesData = [
         subject: "Les Explorateurs et leurs Découvertes",
     },
     {
-        id: 16,
+        id: "D016",
         title: "Les Mystères de l'Atlantide",
         genre: "Légende",
         duration: 90,
@@ -131,7 +131,7 @@ exports.documentariesData = [
         subject: "La Légende de l'Atlantide",
     },
     {
-        id: 17,
+        id: "D017",
         title: "Les Secrets des Civilisations Antiques",
         genre: "Histoire",
         duration: 85,
@@ -139,7 +139,7 @@ exports.documentariesData = [
         subject: "Les Civilisations de l'Antiquité",
     },
     {
-        id: 18,
+        id: "D018",
         title: "Les Merveilles de l'Architecture Antique",
         genre: "Architecture",
         duration: 95,
@@ -147,7 +147,7 @@ exports.documentariesData = [
         subject: "Les Bâtiments et Structures de l'Antiquité",
     },
     {
-        id: 19,
+        id: "D019",
         title: "Les Mystères de la Mythologie Grecque",
         genre: "Mythologie",
         duration: 80,
@@ -155,7 +155,7 @@ exports.documentariesData = [
         subject: "Les Dieux et Héros de la Mythologie Grecque",
     },
     {
-        id: 20,
+        id: "D020",
         title: "Les Secrets de la Vie Marine",
         genre: "Nature",
         duration: 90,

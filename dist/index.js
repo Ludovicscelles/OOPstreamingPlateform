@@ -12,7 +12,7 @@ const Film_1 = require("./models/Film");
 const Documentary_1 = require("./models/Documentary");
 const movieLibrary = new MovieLibrary_1.MovieLibrary();
 // Création d'un tableau d'identifiants de films sélectionnés
-const selectedIdsFilms = [5, 9, 11, 14, 20];
+const selectedIdsFilms = ["F005", "F009", "F011", "F014", "F020"];
 // Filtrage des films en fonction des identifiants sélectionnés
 const selectedFilms = filmsData_1.filmsData.filter((film) => selectedIdsFilms.includes(film.id));
 // Boucle sur les films sélectionnés et création d'instances de Film
@@ -21,9 +21,9 @@ selectedFilms.forEach((selectedFilm) => {
     const film = (0, createFilm_1.createFilm)(selectedFilm);
     movieLibrary.add(film);
 });
-const getFilmById9 = movieLibrary.getById(9);
+const getFilmById9 = movieLibrary.getById("F009");
 console.log(getFilmById9 ? `Film trouvé : ${getFilmById9.title}` : `Aucun film trouvé.`);
-const deleateFilmId5 = movieLibrary.delete(5);
+const deleateFilmId5 = movieLibrary.delete("F005");
 console.log(deleateFilmId5 ? `Film avec l'ID 5 supprimé` : `Vidéo non trouvée.`);
 const searchFilm = movieLibrary.search("Tit");
 searchFilm.length > 0
@@ -46,7 +46,7 @@ searchEpisodeSerie1.length > 0
     ? console.log(`Épisode(s) trouvé(s) : ${searchEpisodeSerie1.map((ep) => `${ep.episode.title} (saison ${ep.season.number} de ${ep.serie.title})`)}`)
     : console.log(`Aucun épisode trouvé`);
 // Création d'un tableau d'identifiants de documentaires sélectionnés
-const selectedIds = [1, 2, 3, 4, 5];
+const selectedIds = ["D001", "D002", "D003", "D004", "D014", "D020"];
 // Filtrage des documentaires en fonction des identifiants sélectionnés
 // puis création d'instances de Documentary pour chaque documentaire sélectionné
 const selectedDocumentaries = documentariesData_1.documentariesData.filter((documentary) => selectedIds.includes(documentary.id));
@@ -55,11 +55,11 @@ selectedDocumentaries.forEach((selectedData) => {
     const documentary = (0, createDocumentary_1.createDocumentary)(selectedData);
     movieLibrary.add(documentary);
 });
-const docById4 = movieLibrary.getById(4);
+const docById4 = movieLibrary.getById("D004");
 console.log(docById4
-    ? `Documentaire trouvé ${docById4.title}`
+    ? `Documentaire trouvé : ${docById4.title}`
     : `Aucun documentaire trouvé`);
-const deleateDocumentaryId1 = movieLibrary.delete(1);
+const deleateDocumentaryId1 = movieLibrary.delete("D001");
 console.log(deleateDocumentaryId1
     ? `Documentaire avec l'ID 1 supprimé`
     : `Vidéo non trouvée.`);

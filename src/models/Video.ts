@@ -1,6 +1,6 @@
 export abstract class Video {
   constructor(
-    public id: number,
+    public id: string,
     public title: string,
     public genre: string,
     public duration?: number,

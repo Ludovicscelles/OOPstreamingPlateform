@@ -5,7 +5,7 @@ import { Film } from "../models/Film";
 export function createFilm(
   // Paramètre data : un objet contenant les propriétés nécessaires pour créer un film
   data: {
-    id: number;
+    id: string;
     title: string;
     genre: string;
     duration: number;

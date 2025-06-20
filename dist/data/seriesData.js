@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.seriesData = void 0;
 exports.seriesData = [
     {
-        id: 1,
+        id: "S001",
         title: "Columbo",
         genre: "Policier",
         seasonData: [
@@ -58,7 +58,7 @@ exports.seriesData = [
         ],
     },
     {
-        id: 2,
+        id: "S002",
         title: "Rome",
         genre: "Historique",
         seasonData: [

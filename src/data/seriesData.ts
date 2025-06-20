@@ -1,6 +1,6 @@
 export const seriesData = [
   {
-    id: 1,
+    id: "S001",
     title: "Columbo",
     genre: "Policier",
     seasonData: [
@@ -55,7 +55,7 @@ export const seriesData = [
     ],
   },
   {
-    id: 2,
+    id: "S002",
     title: "Rome",
     genre: "Historique",
     seasonData: [

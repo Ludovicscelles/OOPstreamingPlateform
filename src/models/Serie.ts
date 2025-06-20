@@ -2,7 +2,7 @@ import { Video } from "./Video";
 
 export class Serie extends Video {
   constructor(
-    id: number,
+    id: string,
     title: string,
     genre: string,
     public season: Season[]

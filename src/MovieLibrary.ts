@@ -10,7 +10,7 @@ export class MovieLibrary {
     return this.videos;
   }
 
-  getById(id: number): Video | undefined {
+  getById(id: string): Video | undefined {
     return this.videos.find((video) => video.id === id);
   }
 
@@ -57,7 +57,7 @@ export class MovieLibrary {
     this.series.push(serie);
   }
 
-  delete(videoId: number): boolean {
+  delete(videoId: string): boolean {
     const initialLength = this.videos.length;
     this.videos = this.videos.filter((video) => video.id !== videoId);
     return this.videos.length < initialLength;
