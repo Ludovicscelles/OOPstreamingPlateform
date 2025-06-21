@@ -14,7 +14,7 @@ import { Documentary } from "./models/Documentary";
 const movieLibrary = new MovieLibrary();
 
 // Création d'un tableau d'identifiants de films sélectionnés
-const selectedIdsFilms = ["F005", "F009", "F011","F014", "F020"];
+const selectedIdsFilms = ["F005", "F007", "F009", "F011", "F014", "F020"];
 
 // Filtrage des films en fonction des identifiants sélectionnés
 const selectedFilms = filmsData.filter((film) =>
@@ -31,6 +31,30 @@ selectedFilms.forEach((selectedFilm) => {
 const getFilmById9 = movieLibrary.getById("F009");
 console.log(
   getFilmById9 ? `Film trouvé : ${getFilmById9.title}` : `Aucun film trouvé.`
+);
+
+const newTitleFilmF009 = movieLibrary.setTitle(
+  "F009",
+  "Gladiotor, Special Edition"
+);
+
+const updatedFilmF009 = movieLibrary.getById("F009");
+console.log(
+  newTitleFilmF009
+    ? `Titre du film avec l'ID F009 mis à jour : ${updatedFilmF009?.title}`
+    : `Aucun film trouvé avec l'ID F009.`
+);
+
+const newTitleFilmF007 = movieLibrary.setTitle(
+  "F007",
+  "Les Diaboliques (The Devils)"
+);
+
+const updatedFilmF007 = movieLibrary.getById("F007");
+console.log(
+  newTitleFilmF007
+    ? `Titre du film avec l'ID F007 mis à jour : ${updatedFilmF007?.title}`
+    : `Aucun film trouvé avec l'ID F007.`
 );
 
 const deleateFilmId5 = movieLibrary.delete("F005");
@@ -91,6 +115,30 @@ console.log(
   docById4
     ? `Documentaire trouvé : ${docById4.title}`
     : `Aucun documentaire trouvé`
+);
+
+const newTitleDocD002 = movieLibrary.setTitle(
+  "D002",
+  "Cléopatre, Reine d'Égypte"
+);
+
+const updatedDocD002 = movieLibrary.getById("D002");
+console.log(
+  newTitleDocD002
+    ? `Titre du documentaire avec l'ID D002 mis à jour : ${updatedDocD002?.title}`
+    : `Aucun documentaire trouvé avec l'ID D002.`
+);
+
+const newTitleDocD003 = movieLibrary.setTitle(
+  "D003",
+  "Les Mystères de l'Empire Romain"
+);
+
+const updatedDocD003 = movieLibrary.getById("D003");
+console.log(
+  newTitleDocD003
+    ? `Titre du documentaire avec l'ID D003 mis à jour : ${updatedDocD003?.title}`
+    : `Aucun documentaire trouvé avec l'ID D003.`
 );
 
 const deleateDocumentaryId1 = movieLibrary.delete("D001");

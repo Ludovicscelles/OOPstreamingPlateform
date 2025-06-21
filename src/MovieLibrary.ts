@@ -4,12 +4,13 @@ import { Episode, Season, Serie } from "./models/Serie";
 export class MovieLibrary {
   private videos: Video[] = [];
   private series: Serie[] = [];
-  
 
+  // Getter for all videos
   getAll(): Video[] {
     return this.videos;
   }
 
+  // Getter for one video by ID
   getById(id: string): Video | undefined {
     return this.videos.find((video) => video.id === id);
   }
@@ -55,6 +56,15 @@ export class MovieLibrary {
 
   addSerie(serie: Serie): void {
     this.series.push(serie);
+  }
+
+  setTitle(videoId: string, newTitle: string): boolean {
+    const video = this.videos.find((video) => video.id === videoId);
+    if (video) {
+      video.title = newTitle;
+      return true;
+    }
+    return false;
   }
 
   delete(videoId: string): boolean {

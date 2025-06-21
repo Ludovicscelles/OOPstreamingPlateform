@@ -6,9 +6,11 @@ class MovieLibrary {
         this.videos = [];
         this.series = [];
     }
+    // Getter for all videos
     getAll() {
         return this.videos;
     }
+    // Getter for one video by ID
     getById(id) {
         return this.videos.find((video) => video.id === id);
     }
@@ -39,6 +41,14 @@ class MovieLibrary {
     }
     addSerie(serie) {
         this.series.push(serie);
+    }
+    setTitle(videoId, newTitle) {
+        const video = this.videos.find((video) => video.id === videoId);
+        if (video) {
+            video.title = newTitle;
+            return true;
+        }
+        return false;
     }
     delete(videoId) {
         const initialLength = this.videos.length;
