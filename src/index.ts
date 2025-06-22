@@ -57,6 +57,16 @@ console.log(
     : `Aucun film trouvé avec l'ID F007.`
 );
 
+const setFilmF014 = movieLibrary.setVideo("F014", {
+  title: "Le Silences Des Agneaux, édition limitée",
+});
+const updatedFilmF014 = movieLibrary.getById("F014");
+console.log(
+  setFilmF014
+    ? `Film avec l'ID F014 mise à jour : ${updatedFilmF014?.title} / ${updatedFilmF014?.genre} / ${updatedFilmF014?.duration}`
+    : `Aucun film trouvé avec l'ID F014 trouvé `
+);
+
 const deleateFilmId5 = movieLibrary.delete("F005");
 console.log(
   deleateFilmId5 ? `Film avec l'ID 5 supprimé` : `Vidéo non trouvée.`
@@ -139,6 +149,18 @@ console.log(
   newTitleDocD003
     ? `Titre du documentaire avec l'ID D003 mis à jour : ${updatedDocD003?.title}`
     : `Aucun documentaire trouvé avec l'ID D003.`
+);
+
+const setDocD004 = movieLibrary.setVideo("D004", {
+  title: "Les Secrets de la Renaissance à travers l'Europe",
+  genre: "Art & Hitoire",
+  duration: 100,
+});
+const updatedDocD004 = movieLibrary.getById("D004");
+console.log(
+  setDocD004
+    ? `Documentaire avec l'ID D004 mis à jour : ${updatedDocD004?.title} / ${updatedDocD004?.genre} / ${updatedDocD004?.duration}`
+    : `Aucun Documentaire trouvé avec l'ID D004 trouvé `
 );
 
 const deleateDocumentaryId1 = movieLibrary.delete("D001");

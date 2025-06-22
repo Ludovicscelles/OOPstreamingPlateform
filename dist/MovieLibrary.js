@@ -50,6 +50,13 @@ class MovieLibrary {
         }
         return false;
     }
+    setVideo(videoId, update) {
+        const video = this.videos.find((video) => video.id === videoId);
+        if (!video)
+            return false;
+        Object.assign(video, update);
+        return true;
+    }
     delete(videoId) {
         const initialLength = this.videos.length;
         this.videos = this.videos.filter((video) => video.id !== videoId);

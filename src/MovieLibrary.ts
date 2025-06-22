@@ -67,6 +67,13 @@ export class MovieLibrary {
     return false;
   }
 
+  setVideo(videoId: string, update: Partial<Video>): boolean {
+    const video = this.videos.find((video) => video.id === videoId);
+    if (!video) return false;
+    Object.assign(video, update);
+    return true;
+  }
+
   delete(videoId: string): boolean {
     const initialLength = this.videos.length;
     this.videos = this.videos.filter((video) => video.id !== videoId);
