@@ -22,6 +22,21 @@ class MovieLibrary {
         const searchTerm = serieTitle.toLowerCase();
         return this.series.filter((serie) => serie.title.toLowerCase().includes(searchTerm));
     }
+    searchAll(videoTitle) {
+        const searchTerm = videoTitle.toLowerCase();
+        const match = [];
+        for (const video of this.videos) {
+            if (video.title.toLowerCase().includes(searchTerm)) {
+                match.push({ type: video.constructor.name, videoTitle: video.title });
+            }
+        }
+        for (const serie of this.series) {
+            if (serie.title.toLowerCase().includes(searchTerm)) {
+                match.push({ type: "Série", videoTitle: serie.title });
+            }
+        }
+        return match;
+    }
     searchEpisodeSerie(episodeTitle) {
         const searchTerm = episodeTitle.toLocaleLowerCase();
         const results = [];

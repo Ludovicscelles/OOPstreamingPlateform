@@ -93,7 +93,7 @@ const setDocD004 = movieLibrary.setVideo("D004", {
 });
 const updatedDocD004 = movieLibrary.getById("D004");
 console.log(setDocD004
-    ? `Documentaire avec l'ID D004 mise à jour : ${updatedDocD004?.title} / ${updatedDocD004?.genre} / ${updatedDocD004?.duration}`
+    ? `Documentaire avec l'ID D004 mis à jour : ${updatedDocD004?.title} / ${updatedDocD004?.genre} / ${updatedDocD004?.duration}`
     : `Aucun Documentaire trouvé avec l'ID D004 trouvé `);
 const deleateDocumentaryId1 = movieLibrary.delete("D001");
 console.log(deleateDocumentaryId1
@@ -126,3 +126,15 @@ console.log(movieLibrary
     .filter((video) => video instanceof Documentary_1.Documentary)
     .forEach((documentary) => documentary.play()));
 console.log(movieLibrary);
+const globalSearch = movieLibrary.searchAll("Les mystères");
+if (globalSearch.length > 0) {
+    globalSearch.forEach(search => {
+        console.log(`${search.type} : ${search.videoTitle}`);
+    });
+}
+const globalSearch2 = movieLibrary.searchAll("rom");
+if (globalSearch2.length > 0) {
+    globalSearch2.forEach(search2 => {
+        console.log(`${search2.type} : ${search2.videoTitle}`);
+    });
+}

@@ -31,6 +31,24 @@ export class MovieLibrary {
     );
   }
 
+  searchAll(videoTitle: string): { type: string; videoTitle: string }[] {
+    const searchTerm = videoTitle.toLowerCase();
+    const match: { type: string; videoTitle: string }[] = [];
+
+    for (const video of this.videos) {
+      if (video.title.toLowerCase().includes(searchTerm)) {
+        match.push({ type: video.constructor.name, videoTitle: video.title });
+      }
+    }
+    for (const serie of this.series) {
+      if (serie.title.toLowerCase().includes(searchTerm)) {
+        match.push({ type: "Série", videoTitle: serie.title });
+      }
+    }
+
+    return match;
+  }
+
   searchEpisodeSerie(
     episodeTitle: string
   ): { episode: Episode; season: Season; serie: Serie }[] {

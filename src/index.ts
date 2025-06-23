@@ -222,3 +222,20 @@ console.log(
 );
 
 console.log(movieLibrary);
+
+const globalSearch = movieLibrary.searchAll("Les mystères");
+
+if (globalSearch.length >0){
+  globalSearch.forEach(search =>{
+    console.log(`${search.type} : ${search.videoTitle}`)
+  })
+}
+
+const globalSearch2 = movieLibrary.searchAll("rom");
+
+if (globalSearch2.length >0){
+  globalSearch2.forEach(search2 =>{
+    console.log(`${search2.type} : ${search2.videoTitle}`)
+  })
+}
+
