@@ -6,7 +6,7 @@ export class TvShow extends Video {
     title: string,
     genre: string,
     public director: string,
-    public season: Season[]
+    public season: SeasonTvShow[]
   ) {
     super(id, title, genre);
   }
@@ -17,16 +17,16 @@ export class TvShow extends Video {
   }
 }
 
-export class Season {
+export class SeasonTvShow {
   constructor(
     public year: number,
     public number: number,
     public TVHost: string,
-    public episodes: Episode[]
+    public episodes: EpisodeTvShow[]
   ) {}
 }
 
-export class Episode {
+export class EpisodeTvShow {
   constructor(
     
     public number: number,

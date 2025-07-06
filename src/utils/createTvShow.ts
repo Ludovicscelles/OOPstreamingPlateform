@@ -1,4 +1,4 @@
-import { Episode, Season, TvShow } from "../models/TvShow";
+import { EpisodeTvShow, SeasonTvShow, TvShow } from "../models/TvShow";
 
 export function createTvShow(data: {
   id: string;
@@ -18,9 +18,9 @@ export function createTvShow(data: {
   const season = data.seasonData.map(
     ({ seasonYear, seasonNumber, seasonTVHost, episodes }) => {
       const episodesInstances = episodes.map(
-        (episode) => new Episode(episode.numberEpisode, episode.duration)
+        (episode) => new EpisodeTvShow(episode.numberEpisode, episode.duration)
       );
-      return new Season(
+      return new SeasonTvShow(
         seasonYear,
         seasonNumber,
         seasonTVHost,
