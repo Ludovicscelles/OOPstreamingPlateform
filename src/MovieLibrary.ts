@@ -1,9 +1,11 @@
 import { Video } from "./models/Video";
 import { Episode, Season, Serie } from "./models/Serie";
+import { TvShow } from "./models/TvShow";
 
 export class MovieLibrary {
   private videos: Video[] = [];
   private series: Serie[] = [];
+  private tvShows: TvShow[] = [];
 
   // Getter for all videos
   getAll(): Video[] {
@@ -31,6 +33,14 @@ export class MovieLibrary {
     );
   }
 
+  searchTvShow(tvShowTitle: string): TvShow[] {
+    const searchTerm = tvShowTitle.toLocaleLowerCase();
+
+    return this.tvShows.filter((tvShow) =>
+      tvShow.title.toLowerCase().includes(searchTerm)
+    );
+  }
+
   searchAll(videoTitle: string): { type: string; videoTitle: string }[] {
     const searchTerm = videoTitle.toLowerCase();
     const match: { type: string; videoTitle: string }[] = [];
@@ -43,6 +53,12 @@ export class MovieLibrary {
     for (const serie of this.series) {
       if (serie.title.toLowerCase().includes(searchTerm)) {
         match.push({ type: "Série", videoTitle: serie.title });
+      }
+    }
+
+    for (const tvShow of this.tvShows) {
+      if (tvShow.title.toLocaleLowerCase().includes(searchTerm)) {
+        match.push({ type: "TvShow", videoTitle: tvShow.title });
       }
     }
 
@@ -74,6 +90,10 @@ export class MovieLibrary {
 
   addSerie(serie: Serie): void {
     this.series.push(serie);
+  }
+
+  addTvShow(tvShow: TvShow): void {
+    this.tvShows.push(tvShow);
   }
 
   setTitle(videoId: string, newTitle: string): boolean {
