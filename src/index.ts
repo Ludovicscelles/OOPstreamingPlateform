@@ -1,15 +1,18 @@
 import { documentariesData } from "./data/documentariesData";
 import { filmsData } from "./data/filmsData";
 import { seriesData } from "./data/seriesData";
+import { tvShowData } from "./data/TvShowData";
 
 import { createDocumentary } from "./utils/createDocumentary";
 import { createFilm } from "./utils/createFilm";
 import { createSerie } from "./utils/createSerie";
+import { createTvShow } from "./utils/createTvShow";
 
 import { MovieLibrary } from "./MovieLibrary";
 import { Serie } from "./models/Serie";
 import { Film } from "./models/Film";
 import { Documentary } from "./models/Documentary";
+import { TvShow } from "./models/TvShow";
 
 const movieLibrary = new MovieLibrary();
 
@@ -91,6 +94,11 @@ seriesData.forEach((serieData) => {
   movieLibrary.addSerie(serie);
 });
 
+tvShowData.forEach((tvShowData) => {
+  const tvShow = createTvShow(tvShowData);
+  movieLibrary.addTvShow(tvShow);
+});
+
 const searchSerie = movieLibrary.searchSerie("Ro");
 searchSerie.length > 0
   ? console.log(
@@ -104,6 +112,15 @@ searchEpisodeSerie1.length > 0
       `Épisode(s) trouvé(s) : ${searchEpisodeSerie1.map((ep) => `${ep.episode.title} (saison ${ep.season.number} de ${ep.serie.title})`)}`
     )
   : console.log(`Aucun épisode trouvé`);
+
+const searchTvShow = movieLibrary.searchTvShow("Fo");
+searchTvShow.length > 0
+  ? console.log(
+      `Émission trouvée :\n${searchTvShow
+        .map((tvShow) => `${tvShow.title}`)
+        .join("\n")}`
+    )
+  : console.log(`Émission non trouvée`);
 
 // Création d'un tableau d'identifiants de documentaires sélectionnés
 const selectedIds = ["D001", "D002", "D003", "D004", "D014", "D020"];
@@ -225,17 +242,23 @@ console.log(movieLibrary);
 
 const globalSearch = movieLibrary.searchAll("Les mystères");
 
-if (globalSearch.length >0){
-  globalSearch.forEach(search =>{
-    console.log(`${search.type} : ${search.videoTitle}`)
-  })
+if (globalSearch.length > 0) {
+  globalSearch.forEach((search) => {
+    console.log(`${search.type} : ${search.videoTitle}`);
+  });
 }
 
 const globalSearch2 = movieLibrary.searchAll("rom");
 
-if (globalSearch2.length >0){
-  globalSearch2.forEach(search2 =>{
-    console.log(`${search2.type} : ${search2.videoTitle}`)
-  })
+if (globalSearch2.length > 0) {
+  globalSearch2.forEach((search2) => {
+    console.log(`${search2.type} : ${search2.videoTitle}`);
+  });
 }
 
+const globalSearch3 = movieLibrary.searchAll("traîtr");
+if (globalSearch3.length > 0) {
+  globalSearch3.forEach((search3) => {
+    console.log(`${search3.type} : ${search3.videoTitle}`);
+  });
+}
