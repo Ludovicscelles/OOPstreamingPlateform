@@ -3,9 +3,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const documentariesData_1 = require("./data/documentariesData");
 const filmsData_1 = require("./data/filmsData");
 const seriesData_1 = require("./data/seriesData");
+const TvShowData_1 = require("./data/TvShowData");
 const createDocumentary_1 = require("./utils/createDocumentary");
 const createFilm_1 = require("./utils/createFilm");
 const createSerie_1 = require("./utils/createSerie");
+const createTvShow_1 = require("./utils/createTvShow");
 const MovieLibrary_1 = require("./MovieLibrary");
 const Serie_1 = require("./models/Serie");
 const Film_1 = require("./models/Film");
@@ -54,6 +56,10 @@ seriesData_1.seriesData.forEach((serieData) => {
     const serie = (0, createSerie_1.createSerie)(serieData);
     movieLibrary.addSerie(serie);
 });
+TvShowData_1.tvShowData.forEach((tvShowData) => {
+    const tvShow = (0, createTvShow_1.createTvShow)(tvShowData);
+    movieLibrary.addTvShow(tvShow);
+});
 const searchSerie = movieLibrary.searchSerie("Ro");
 searchSerie.length > 0
     ? console.log(`Résultat de la recherche : \n${searchSerie.map((serie) => `${serie.title}`).join("\n")}`)
@@ -62,6 +68,12 @@ const searchEpisodeSerie1 = movieLibrary.searchEpisodeSerie("peut nuire");
 searchEpisodeSerie1.length > 0
     ? console.log(`Épisode(s) trouvé(s) : ${searchEpisodeSerie1.map((ep) => `${ep.episode.title} (saison ${ep.season.number} de ${ep.serie.title})`)}`)
     : console.log(`Aucun épisode trouvé`);
+const searchTvShow = movieLibrary.searchTvShow("Fo");
+searchTvShow.length > 0
+    ? console.log(`Émission trouvée :\n${searchTvShow
+        .map((tvShow) => `${tvShow.title}`)
+        .join("\n")}`)
+    : console.log(`Émission non trouvée`);
 // Création d'un tableau d'identifiants de documentaires sélectionnés
 const selectedIds = ["D001", "D002", "D003", "D004", "D014", "D020"];
 // Filtrage des documentaires en fonction des identifiants sélectionnés
@@ -128,13 +140,19 @@ console.log(movieLibrary
 console.log(movieLibrary);
 const globalSearch = movieLibrary.searchAll("Les mystères");
 if (globalSearch.length > 0) {
-    globalSearch.forEach(search => {
+    globalSearch.forEach((search) => {
         console.log(`${search.type} : ${search.videoTitle}`);
     });
 }
 const globalSearch2 = movieLibrary.searchAll("rom");
 if (globalSearch2.length > 0) {
-    globalSearch2.forEach(search2 => {
+    globalSearch2.forEach((search2) => {
         console.log(`${search2.type} : ${search2.videoTitle}`);
+    });
+}
+const globalSearch3 = movieLibrary.searchAll("traîtr");
+if (globalSearch3.length > 0) {
+    globalSearch3.forEach((search3) => {
+        console.log(`${search3.type} : ${search3.videoTitle}`);
     });
 }

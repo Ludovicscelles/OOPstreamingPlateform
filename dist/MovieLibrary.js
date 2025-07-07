@@ -5,6 +5,7 @@ class MovieLibrary {
     constructor() {
         this.videos = [];
         this.series = [];
+        this.tvShows = [];
     }
     // Getter for all videos
     getAll() {
@@ -22,6 +23,10 @@ class MovieLibrary {
         const searchTerm = serieTitle.toLowerCase();
         return this.series.filter((serie) => serie.title.toLowerCase().includes(searchTerm));
     }
+    searchTvShow(tvShowTitle) {
+        const searchTerm = tvShowTitle.toLocaleLowerCase();
+        return this.tvShows.filter((tvShow) => tvShow.title.toLowerCase().includes(searchTerm));
+    }
     searchAll(videoTitle) {
         const searchTerm = videoTitle.toLowerCase();
         const match = [];
@@ -33,6 +38,11 @@ class MovieLibrary {
         for (const serie of this.series) {
             if (serie.title.toLowerCase().includes(searchTerm)) {
                 match.push({ type: "Série", videoTitle: serie.title });
+            }
+        }
+        for (const tvShow of this.tvShows) {
+            if (tvShow.title.toLocaleLowerCase().includes(searchTerm)) {
+                match.push({ type: "TvShow", videoTitle: tvShow.title });
             }
         }
         return match;
@@ -56,6 +66,9 @@ class MovieLibrary {
     }
     addSerie(serie) {
         this.series.push(serie);
+    }
+    addTvShow(tvShow) {
+        this.tvShows.push(tvShow);
     }
     setTitle(videoId, newTitle) {
         const video = this.videos.find((video) => video.id === videoId);
